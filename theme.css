@@ -1,18 +1,11 @@
-/* VindemiaFae Sims 4 CC Finds standalone website stylesheet */
 :root {
-    --rw-night: #07110b;
-    --rw-pine: #102114;
-    --rw-deep-moss: #1f3222;
-    --rw-moss: #3f613e;
-    --rw-fern: #74a66a;
-    --rw-sage: #a9c4a0;
-    --rw-lily: #ece8d8;
-    --rw-moonwater: #8fbfb2;
-    --rw-bronze: #634d3d;
-    --rw-panel: rgba(14, 28, 17, .88);
-    --rw-panel-soft: rgba(28, 49, 32, .78);
-    --rw-border: rgba(169, 196, 160, .32);
-    --rw-glow: rgba(166, 255, 170, .28);
+    --rw-panel: rgba(9, 22, 13, .72);
+    --rw-panel-soft: rgba(20, 38, 24, .62);
+    --rw-border: rgba(180, 210, 170, .18);
+    --rw-sage: #c0d6b5;
+    --rw-lily: #f3eddc;
+    --rw-fern: #8fbd7f;
+    --rw-bronze: #b28a62;
 }
 
 * {
@@ -20,7 +13,20 @@
 }
 /* HERO BACKGROUND */
 
-/* LILY / DRAGONFLY DIVIDER */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:wght@400;500;600&display=swap');
+
+body {
+    font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.blog-title,
+.widget-title,
+.nav-menu .label,
+.post-header .title {
+    font-family: "Cinzel", Georgia, serif;
+}
+
+/* LILY DIVIDER */
 .post::before,
 .widget::before {
     content: "✧  🪷  ✧  🪷  ✧";
@@ -87,7 +93,6 @@ html, body {
 
 body {
     color: var(--rw-lily);
-    font-family: Georgia, "Times New Roman", serif;
     background:
         linear-gradient(rgba(7,17,11,.42), rgba(7,17,11,.82)),
         url('https://rawcdn.githack.com/vindemiafae/CustomTumblrBlogTheme/main/image%201.png') center top / cover fixed no-repeat;
@@ -140,17 +145,23 @@ a:hover {
 .header-wrapper,
 .nav-wrapper,
 .post,
-.post-wrapper,
-.post-content,
-.content,
 .sidebar,
 .widget,
 footer {
-    background: var(--rw-panel);
-    border: 1px solid var(--rw-border);
-    box-shadow: 0 18px 45px rgba(0,0,0,.28);
-    border-radius: 18px;
-    padding: 16px;
+    background: rgba(8, 22, 12, .72);
+    border: 1px solid rgba(169, 196, 160, .18);
+    box-shadow: 0 18px 45px rgba(0,0,0,.25);
+    border-radius: 22px;
+    padding: 18px;
+}
+
+.post-wrapper,
+.post-content,
+.content {
+    background: transparent;
+    border: 0;
+    box-shadow: none;
+    padding: 0;
 }
 
 .header-wrapper {
@@ -164,16 +175,17 @@ footer {
 }
 
 .header-image-wrapper {
-    min-height: 320px;
+    min-height: 300px;
     overflow: hidden;
+    border-radius: 16px;
 }
 
 .header-image.cover {
     width: 100%;
-    min-height: 320px;
-    background-size: contain;
+    min-height: 300px;
+    background-size: cover;
     background-repeat: no-repeat;
-    background-position: center;
+    background-position: center 58%;
 }
 
 .blog-title-wrapper {
