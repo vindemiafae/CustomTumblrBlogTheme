@@ -1,12 +1,123 @@
+/* Custom Tumblr theme overrides
+   1. Tumblr editor colors and theme overrides
+   2. Page visuals and effects
+   3. Post panels, widgets, and responsive styling
+   4. Optional hero backgrounds and dividers
+*/
 
-/* =========================================================
-   ROWANWOOD ATELIER — ENCHANTED WOODLAND OVERRIDE
-   Build notes:
-   - Keep Tumblr blocks intact.
-   - Edit colors in :root first.
-   - Replace image variables in Tumblr Customize panel.
-   ========================================================= */
+/* Section 1: Tumblr editor colors and theme overrides */
+body {
+    background: {BackgroundColor};
+}
 
+.blog-title {
+    font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
+    font-weight: {TitleFontWeight};
+}
+
+.blog-title a,
+.description,
+.search-no-results,
+.likes-no-likes,
+.related-posts-wrapper > h2,
+.loader .loader-bar,
+.widget-title,
+.tagged-page-cta .tagged-page-cta-desc {
+    color: {TitleColor};
+}
+
+.tagged-page-cta .tagged-page-cta-tag {
+    color: {TitleColor};
+    border-color: {TitleColor};
+}
+
+/* Accent color for links and controls */
+a {
+    color: {AccentColor};
+}
+
+#pagination a,
+.nav-wrapper .nav-item .label {
+    color: {AccentColor};
+}
+
+#pagination a.next:after {
+    border-left-color: {AccentColor};
+}
+
+#pagination a.previous:after {
+    border-right-color: {AccentColor};
+}
+
+.header-image.cover {
+    background-image: url({HeaderImage});
+}
+
+.user-avatar {
+    background-color: {BackgroundColor};
+    border-color: {BackgroundColor};
+}
+
+.avatar-style-square .user-avatar {
+    -webkit-box-shadow: 0 0 0 4px {BackgroundColor};
+    box-shadow: 0 0 0 4px {BackgroundColor};
+}
+
+.no-header-image .logo-wrapper,
+.contain-header-image .logo-wrapper {
+    color: {AccentColor};
+}
+
+/* Light logo version */
+.light-on-light.no-header-image .logo-wrapper,
+.light-on-light.contain-header-image .logo-wrapper {
+    color: #444;
+}
+
+/* Dark logo version */
+.dark-on-dark.no-header-image .logo-wrapper,
+.dark-on-dark.contain-header-image .logo-wrapper {
+    color: #fff;
+}
+
+/* Compact Tumblr iframe styling */
+.tmblr-iframe-compact .tmblr-iframe--unified-controls {
+    min-width: 100%;
+    background-color: {BackgroundColor};
+}
+
+/* Sticky navigation background */
+.nav-fixed {
+    background-color: {BackgroundColor};
+}
+
+.nav-responsive .inline-nav::after {
+    background-image: linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
+    background-image: -webkit-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
+    background-image: -moz-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
+    background-image: -ms-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
+    background-image: -o-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
+}
+
+/* Section 1: Small-screen Tumblr fallbacks */
+@media screen and (max-device-width: 568px) {
+    .header-image.cover {
+        background-image: url({HeaderImage-640});
+        -webkit-background-size: cover;
+        background-size: cover;
+    }
+
+    .avatar-style-square .user-avatar {
+        -webkit-box-shadow: 0 0 0 3px {BackgroundColor};
+        -moz-box-shadow: 0 0 0 3px {BackgroundColor};
+        box-shadow: 0 0 0 3px {BackgroundColor};
+    }
+}
+
+/* Extra CSS entered in Tumblr's editor */
+{CustomCSS}
+
+/* Section 2: Theme colors and page visuals */
 :root {
     --rw-night: #07110b;
     --rw-pine: #102114;
@@ -38,9 +149,10 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
+    min-height: 100%;
 }
 
-/* soft firefly veil */
+/* Firefly glow overlay */
 body::before {
     content: "";
     position: fixed;
@@ -65,7 +177,7 @@ body > * {
     z-index: 1;
 }
 
-/* Tumblr default theme shell */
+/* Header and navigation shell */
 .header-wrapper,
 .blog-header,
 .l-header-container,
@@ -78,7 +190,9 @@ body > * {
 .blog-title,
 .blog-title a,
 .title,
-h1, h2, h3,
+h1,
+h2,
+h3,
 .widget-title {
     color: var(--rw-lily) !important;
     letter-spacing: .12em;
@@ -93,14 +207,17 @@ h1, h2, h3,
 
 a {
     color: var(--rw-fern);
-    transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
+    transition: color .25s ease, text-shadow .25s ease, transform .25s ease, border-color .2s ease;
 }
 
 a:hover {
-    color: var(--rw-lily);
-    text-shadow: 0 0 6px var(--rw-glow), 0 0 14px rgba(143,191,178,.22);
+    color: #baf2b1;
+    text-shadow:
+        0 0 6px rgba(169, 255, 180, .75),
+        0 0 14px rgba(111, 180, 151, .65);
 }
 
+/* Post and widget panel backgrounds */
 .post,
 .post-wrapper,
 .post-content,
@@ -163,7 +280,7 @@ button:hover,
     border-color: var(--rw-fern) !important;
 }
 
-/* Custom woodland welcome card — add markup later once base is stable */
+/* Welcome card styling */
 .rw-welcome-card {
     background: var(--rw-panel);
     border: 1px solid var(--rw-border);
@@ -179,7 +296,7 @@ button:hover,
     margin-bottom: .75rem;
 }
 
-/* readable posts on smaller screens */
+/* Mobile view adjustments */
 @media (max-width: 780px) {
     body {
         background-attachment: scroll;
@@ -195,133 +312,74 @@ button:hover,
     }
 }
 
-/* ✨ Firefly overlay */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  z-index: 9999;
-  background-image:
-    radial-gradient(circle, rgba(190,255,150,.45) 0 1px, transparent 2px),
-    radial-gradient(circle, rgba(140,220,180,.25) 0 1px, transparent 3px);
-  background-size: 180px 220px, 260px 300px;
-  animation: fireflies 18s linear infinite;
-  opacity: .45;
-}
-
-@keyframes fireflies {
-  from { background-position: 0 0, 40px 60px; }
-  to { background-position: 180px -220px, -260px -300px; }
-}
-
-/* 🪷 Lily / forest dividers */
-h2::after,
-h3::after,
-.post-title::after,
-.section-title::after {
-  content: "  ✧  ❀  ✧";
-  display: block;
-  margin-top: .55rem;
-  color: #9bcf8d;
-  font-size: .75rem;
-  letter-spacing: .25rem;
-  opacity: .8;
-}
-
-/* 🐉 Dragonfly glow hover */
-a {
-  transition: color .25s ease, text-shadow .25s ease, transform .25s ease;
-}
-
-a:hover {
-  color: #baf2b1 !important;
-  text-shadow:
-    0 0 6px rgba(169, 255, 180, .75),
-    0 0 14px rgba(111, 180, 151, .65);
-}
-
-/* 🌿 Background image layer */
-body {
-  background:
-    linear-gradient(rgba(5, 18, 9, .82), rgba(5, 18, 9, .9)),
-    url("YOUR-BACKGROUND-IMAGE-URL-HERE") center top / cover fixed no-repeat;
-}
-
-/* 🎵 Music widget */
+/* Floating music widget */
 .forest-music {
-  position: fixed;
-  right: 18px;
-  bottom: 18px;
-  z-index: 10000;
-  background: rgba(9, 28, 14, .86);
-  border: 1px solid rgba(155, 207, 141, .45);
-  box-shadow: 0 0 20px rgba(105, 180, 100, .18);
-  padding: 10px;
-  border-radius: 999px;
-  overflow: hidden;
-  max-width: 42px;
-  height: 42px;
-  transition: all .35s ease;
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 10000;
+    background: rgba(9, 28, 14, .86);
+    border: 1px solid rgba(155, 207, 141, .45);
+    box-shadow: 0 0 20px rgba(105, 180, 100, .18);
+    padding: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    max-width: 42px;
+    height: 42px;
+    transition: all .35s ease;
 }
 
 .forest-music span {
-  color: #baf2b1;
-  font-size: 1.1rem;
-  display: block;
-  text-align: center;
-  line-height: 22px;
+    color: #baf2b1;
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    line-height: 22px;
 }
 
-.forest-music iframe {
-  display: none;
-  margin-top: 8px;
+.forest-music audio {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
 }
 
 .forest-music:hover {
-  max-width: 250px;
-  height: 112px;
-  border-radius: 18px;
+    max-width: 250px;
+    height: auto;
+    border-radius: 18px;
 }
 
-.forest-music:hover iframe {
-  display: block;
+.forest-music:hover audio {
+    display: block;
 }
 
-/* 🌲 Full-page hero background */
-body {
-  background:
-    linear-gradient(
-      rgba(3, 16, 9, 0.78),
-      rgba(3, 16, 9, 0.92)
-    ),
-    url("./assets/hero-forest.png") center top / cover fixed no-repeat !important;
+/* Optional hero background */
+body.hero-background {
+    background:
+        linear-gradient(rgba(3, 16, 9, 0.78), rgba(3, 16, 9, 0.92)),
+        url("./assets/hero-forest.png") center top / cover fixed no-repeat;
 }
 
-/* 🪷 Pond banner */
-#header,
-.header,
-.blog-header,
-.hero,
-.top-banner {
-  background:
-    linear-gradient(
-      rgba(3, 16, 9, 0.25),
-      rgba(3, 16, 9, 0.65)
-    ),
-    url("https://raw.githubusercontent.com/vindemiafae/customtumblrblogtheme/main/assets/image 1.png") center center / cover no-repeat !important;
+body.hero-banner #header,
+body.hero-banner .header,
+body.hero-banner .blog-header,
+body.hero-banner .hero,
+body.hero-banner .top-banner {
+    background:
+        linear-gradient(rgba(3, 16, 9, 0.25), rgba(3, 16, 9, 0.65)),
+        url("https://raw.githubusercontent.com/vindemiafae/customtumblrblogtheme/main/assets/image 1.png") center center / cover no-repeat !important;
 }
 
-/* ✨ Divider using your asset strip */
-.post::before,
+/* Optional divider strip */
+.post-divider::before,
 .posts article::before,
 .entry::before {
-  content: "";
-  display: block;
-  width: 100%;
-  height: 42px;
-  margin: 0 auto 1.5rem;
-  background: url("https://raw.githubusercontent.com/vindemiafae/customtumblrblogtheme/main/assets/image 2.png") center center / contain no-repeat;
-  opacity: 0.8;
-  pointer-events: none;
+    content: "";
+    display: block;
+    width: 100%;
+    height: 42px;
+    margin: 0 auto 1.5rem;
+    background: url("https://raw.githubusercontent.com/vindemiafae/customtumblrblogtheme/main/assets/image 2.png") center center / contain no-repeat;
+    opacity: .8;
+    pointer-events: none;
 }

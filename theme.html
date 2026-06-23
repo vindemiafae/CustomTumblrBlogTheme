@@ -21,7 +21,7 @@
         <meta name="if:Show Twitter link" content="0">
         <meta name="text:Disqus shortname" content="">
         <meta name="text:Google analytics ID" content="">
-        <!-- Rowanwood Atelier custom theme options -->
+        <!-- Tumblr customize options -->
         <meta name="image:Forest Background" content="">
         <meta name="image:Lily Accent" content="">
         <meta name="text:Welcome Title" content="Welcome, wanderer">
@@ -45,335 +45,26 @@
         {/block:IfSyntaxHighlighting}
         {PostTypographyStyles}
 
-        <!-- HTML5 Shiv -->
+        <!-- HTML5 shim for older IE browsers -->
         <!--[if lt IE 9]>
             <script src="https://static.tumblr.com/hriofhd/Qj0m8pn7q/html5shiv.js"></script>
         <![endif]-->
 
-        <div class="forest-music">
-  <span>♫</span>
-  <iframe
-    src="YOUR-SPOTIFY-OR-SOUNDCLOUD-EMBED-HERE"
-    width="220"
-    height="80"
-    frameborder="0"
-    allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
-  </iframe>
-</div>
-
-        <style>
-            /* Colors */
-            body {
-                background: {BackgroundColor};
-            }
-
-            .blog-title {
-                font-family: {TitleFont}, "Helvetica Neue", HelveticaNeue, Arial, sans-serif;
-                font-weight: {TitleFontWeight};
-            }
-
-            .blog-title a,
-            .description,
-            .search-no-results,
-            .likes-no-likes,
-            .related-posts-wrapper > h2,
-            .loader .loader-bar,
-            .widget-title,
-            .tagged-page-cta .tagged-page-cta-desc {
-                color: {TitleColor};
-            }
-
-            .tagged-page-cta .tagged-page-cta-tag {
-                color: {TitleColor};
-                border-color: {TitleColor};
-            }
-
-            a {
-                color: {AccentColor};
-            }
-
-            #pagination a,
-            .nav-wrapper .nav-item .label {
-                color: {AccentColor};
-            }
-
-            #pagination a.next:after {
-                border-left-color: {AccentColor};
-            }
-
-            #pagination a.previous:after {
-                border-right-color: {AccentColor};
-            }
-
-            .header-image.cover {
-                background-image: url({HeaderImage});
-            }
-
-            .user-avatar {
-                background-color: {BackgroundColor};
-                border-color: {BackgroundColor};
-            }
-
-            .avatar-style-square .user-avatar {
-                -webkit-box-shadow: 0 0 0 4px {BackgroundColor};
-                box-shadow: 0 0 0 4px {BackgroundColor};
-            }
-
-            .no-header-image .logo-wrapper,
-            .contain-header-image .logo-wrapper {
-                color: {AccentColor};
-            }
-
-            /* Adjust logo for light accents on light backgrounds */
-            .light-on-light.no-header-image .logo-wrapper,
-            .light-on-light.contain-header-image .logo-wrapper {
-                color: #444;
-            }
-
-            /* Adjust logo for dark accents on dark backgrounds */
-            .dark-on-dark.no-header-image .logo-wrapper,
-            .dark-on-dark.contain-header-image .logo-wrapper {
-                color: #fff;
-            }
-
-            /* Logged-out compact Tumblr iframe */
-            .tmblr-iframe-compact .tmblr-iframe--unified-controls {
-                min-width: 100%;
-                background-color: {BackgroundColor};
-            }
-
-            /* Sticky nav colors */
-            .nav-fixed {
-                background-color: {BackgroundColor};
-            }
-
-            .nav-responsive .inline-nav::after {
-                background-image: linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -webkit-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -moz-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -ms-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-                background-image: -o-linear-gradient(left, rgba({RGBBackgroundColor}, 0) 0%, rgba({RGBBackgroundColor},1) 100%);
-            }
-
-            @media screen and (max-device-width: 568px) {
-                .header-image.cover {
-                    background-image: url({HeaderImage-640});
-                    -webkit-background-size: cover;
-                    background-size: cover;
-                }
-
-                .avatar-style-square .user-avatar {
-                    -webkit-box-shadow: 0 0 0 3px {BackgroundColor};
-                    -moz-box-shadow: 0 0 0 3px {BackgroundColor};
-                    box-shadow: 0 0 0 3px {BackgroundColor};
-                }
-
-            }
-
-            /* Custom CSS */
-            {CustomCSS}
-        
-/* =========================================================
-   ROWANWOOD ATELIER — ENCHANTED WOODLAND OVERRIDE
-   Build notes:
-   - Keep Tumblr blocks intact.
-   - Edit colors in :root first.
-   - Replace image variables in Tumblr Customize panel.
-   ========================================================= */
-
-:root {
-    --rw-night: #07110b;
-    --rw-pine: #102114;
-    --rw-deep-moss: #1f3222;
-    --rw-moss: #3f613e;
-    --rw-fern: #74a66a;
-    --rw-sage: #a9c4a0;
-    --rw-lily: #ece8d8;
-    --rw-moonwater: #8fbfb2;
-    --rw-bronze: #b88a67;
-    --rw-panel: rgba(14, 28, 17, .88);
-    --rw-panel-soft: rgba(28, 49, 32, .78);
-    --rw-border: rgba(169, 196, 160, .32);
-    --rw-glow: rgba(166, 255, 170, .28);
-}
-
-html {
-    background: var(--rw-night);
-}
-
-body {
-    color: var(--rw-lily);
-    background:
-        radial-gradient(circle at 20% 10%, rgba(116,166,106,.18), transparent 28rem),
-        radial-gradient(circle at 80% 30%, rgba(143,191,178,.12), transparent 24rem),
-        linear-gradient(rgba(7,17,11,.55), rgba(7,17,11,.9)),
-        url('{image:Forest Background}');
-    background-color: var(--rw-night);
-    background-attachment: fixed;
-    background-size: cover;
-    background-position: center;
-}
-
-/* soft firefly veil */
-body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-        radial-gradient(circle at 12% 28%, rgba(190,255,160,.22) 0 2px, transparent 3px),
-        radial-gradient(circle at 78% 18%, rgba(143,191,178,.2) 0 2px, transparent 3px),
-        radial-gradient(circle at 64% 72%, rgba(236,232,216,.16) 0 2px, transparent 3px),
-        radial-gradient(circle at 36% 84%, rgba(180,255,120,.12) 0 2px, transparent 3px);
-    animation: rw-fireflies 9s ease-in-out infinite alternate;
-}
-
-@keyframes rw-fireflies {
-    from { opacity: .35; transform: translateY(0); }
-    to { opacity: .8; transform: translateY(-10px); }
-}
-
-body > * {
-    position: relative;
-    z-index: 1;
-}
-
-/* Tumblr default theme shell */
-.header-wrapper,
-.blog-header,
-.l-header-container,
-.navigation,
-.nav-wrapper {
-    background: rgba(9, 22, 12, .86) !important;
-    border-color: var(--rw-border) !important;
-}
-
-.blog-title,
-.blog-title a,
-.title,
-h1, h2, h3,
-.widget-title {
-    color: var(--rw-lily) !important;
-    letter-spacing: .12em;
-    text-transform: uppercase;
-    text-shadow: 0 0 12px rgba(116,166,106,.3);
-}
-
-.description,
-.blog-description {
-    color: var(--rw-sage) !important;
-}
-
-a {
-    color: var(--rw-fern);
-    transition: color .2s ease, text-shadow .2s ease, border-color .2s ease;
-}
-
-a:hover {
-    color: var(--rw-lily);
-    text-shadow: 0 0 6px var(--rw-glow), 0 0 14px rgba(143,191,178,.22);
-}
-
-.post,
-.post-wrapper,
-.post-content,
-.content,
-.sidebar,
-.widget,
-.notes-wrapper,
-.related-posts-wrapper {
-    background: var(--rw-panel) !important;
-    border: 1px solid var(--rw-border) !important;
-    box-shadow: 0 18px 45px rgba(0,0,0,.28);
-}
-
-.post {
-    border-radius: 2px;
-}
-
-.post::before {
-    content: "✦";
-    display: block;
-    color: var(--rw-bronze);
-    font-size: .85rem;
-    letter-spacing: .6em;
-    text-align: center;
-    margin: .75rem 0 -.25rem;
-    opacity: .75;
-}
-
-.post-footer,
-.post-meta,
-.post-date,
-.tags,
-.caption,
-.note-count,
-.post_info {
-    color: var(--rw-sage) !important;
-}
-
-blockquote {
-    border-left: 2px solid var(--rw-bronze) !important;
-    color: var(--rw-lily);
-    background: rgba(169,196,160,.06);
-}
-
-button,
-.button,
-.btn,
-input[type="submit"],
-.search-field,
-input,
-textarea {
-    background: var(--rw-panel-soft) !important;
-    color: var(--rw-lily) !important;
-    border: 1px solid var(--rw-border) !important;
-}
-
-button:hover,
-.button:hover,
-.btn:hover {
-    border-color: var(--rw-fern) !important;
-}
-
-/* Custom woodland welcome card — add markup later once base is stable */
-.rw-welcome-card {
-    background: var(--rw-panel);
-    border: 1px solid var(--rw-border);
-    box-shadow: 0 18px 45px rgba(0,0,0,.28);
-    padding: 1.25rem;
-    text-align: center;
-}
-
-.rw-welcome-card::before {
-    content: "☾  ✦  🪷  ✦  ☽";
-    display: block;
-    color: var(--rw-bronze);
-    margin-bottom: .75rem;
-}
-
-/* readable posts on smaller screens */
-@media (max-width: 780px) {
-    body {
-        background-attachment: scroll;
-    }
-
-    .post,
-    .post-wrapper,
-    .post-content,
-    .content,
-    .sidebar,
-    .widget {
-        background: rgba(9, 22, 12, .94) !important;
-    }
-}
-
-        </style>
+        <!-- Theme CSS is stored in rowanwood-overrides.css -->
     </head>
     <body data-urlencoded-name="{URLEncodedName}" class="{select:Layout}{block:IndexPage} index-page{/block:IndexPage}{block:PermalinkPage} permalink{/block:PermalinkPage}{block:LikesPage} likes-page{/block:LikesPage}{block:FollowingPage} following-page{/block:FollowingPage}{block:SearchPage} search-page{block:NoSearchResults} no-results{/block:NoSearchResults}{block:NoLikes} no-likes{/block:NoLikes}{block:NoPosts} no-posts{/block:NoPosts}{block:NoFollowing} no-following{/block:NoFollowing}{/block:SearchPage}{block:HideHeaderImage} no-header-image{/block:HideHeaderImage}{block:NoStretchHeaderImage} contain-header-image{/block:NoStretchHeaderImage}{block:IfRelatedPosts} display-related-posts{/block:IfRelatedPosts}{block:ShowAdsOnThisPage} show-ads{/block:ShowAdsOnThisPage}">
 
-        <!-- This is in case the search engine skips the title tag-->
+        <!-- Floating music widget -->
+        <div class="forest-music">
+            <span>♫</span>
+            <audio controls preload="none">
+                <!-- Replace this source with the direct Pixabay MP3 URL or your hosted audio file. -->
+                <source src="clavier-music-slow-piano-and-rain-220167.mp3" type="audio/mpeg">
+                Your browser does not support audio playback.
+            </audio>
+        </div>
+
+        <!-- Hidden title for search engines and social previews -->
         <h1 style="display: none;">{Title}{block:TagPage} ({lang:Posts tagged Tag}){/block:TagPage}{block:SearchPage} ({lang:Search results for SearchQuery}){/block:SearchPage}{block:PermalinkPage}{block:PostSummary} — {PostSummary}{/block:PostSummary}{/block:PermalinkPage}</h1>
         <div class="app-nag">
             <div class="app-nag-header clearfix">
@@ -1677,7 +1368,7 @@ button:hover,
                                     {/block:Posts}
                                     </div>
                                     <div class="related-posts-cta content">
-                                        <!-- @todo: translate these strings -->
+                                        <!-- Translate these button labels later if needed -->
                                         <a class="related-post-cta button bordered open-in-app">{lang:See this in the app}</a>
                                         <a class="related-post-cta see-more button bordered" href="/">{lang:Show more}</a>
                                     </div>
@@ -1687,7 +1378,7 @@ button:hover,
                                 {/block:ShowAdsOnThisPage}
                             {/block:RelatedPosts}
                         {/block:IfRelatedPosts}
-                    </div> <!-- .main -->
+                    </div> <!-- end main -->
                     <div class="sidebar">
                         {Block:HasHighlightedPosts}
                         <div class="widget highlighted-posts">
@@ -2206,8 +1897,8 @@ button:hover,
                                 {/block:LikedPosts}
                             </div> <!-- .likes-widget -->
                         {/block:HasLikedPosts}
-                    </div> <!-- .sidebar -->
-                </div> <!-- .container -->
+                    </div> <!-- end sidebar -->
+                </div> <!-- end container -->
             </section>
             {block:NewCta}
             {block:PermalinkPage}
