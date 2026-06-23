@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VindemiaFae Sims 4 CC Finds</title>
+    <meta name="description" content="Forest-inspired static website built from a woodland theme.">
+    <link rel="stylesheet" href="theme.css">
+</head>
+<body class="site">
+    <div class="forest-music" aria-label="Background music controls">
+        <button class="music-btn" id="music-toggle" type="button" aria-pressed="false" aria-label="Play background music">
+            <span class="music-icon" id="music-icon">▶</span>
+        </button>
+        <audio id="background-audio" preload="none">
+            <source src="clavier-music-slow-piano-and-rain-220167.mp3" type="audio/mpeg">
+            Your browser does not support audio playback.
+        </audio>
+    </div>
+
+    <section id="page">
+        <div class="header-wrapper">
+            <header id="header" class="top-blog-header">
+                <div class="header-image-wrapper contain">
+                    <div class="header-image cover" style="background-image: url('image 1.png');"></div>
+                </div>
+
+                <div class="blog-title-wrapper content">
+                    <figure class="avatar-wrapper p-author h-card">
+                        <div class="user-avatar" style="background-image: url('image 2.png');"></div>
+                    </figure>
+
+                    <div class="title-group">
+                        <h1 class="blog-title">VindemiaFae Sims 4 CC Finds</h1>
+                        <span class="description">Crafted among roots, moss, and moonlight.</span>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+        <div class="nav-wrapper nav-responsive">
+            <nav class="nav-menu">
+                <ul class="inline-nav">
+                    <li class="nav-item nav-item--posts"><a href="#" class="label current-page">Home</a></li>
+                    <li class="nav-item nav-item--page"><a href="#about" class="label">About</a></li>
+                    <li class="nav-item nav-item--page"><a href="#gallery" class="label">Gallery</a></li>
+                    <li class="nav-item nav-item--archive"><a href="#contact" class="label">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+
+        <section id="posts" class="content clearfix show-nav">
+            <div class="container">
+                <div class="main">
+                    <article class="post text not-page">
+                        <div class="post-wrapper clearfix">
+                            <header class="post-header">
+                                <h2 class="title">Welcome, wanderer</h2>
+                            </header>
+                            <div class="post-content">
+                                <div class="body-text">
+                                    This is a static website version of the VindemiaFae Sims 4 CC Finds theme. The Tumblr template tags have been removed, and the page now works like a normal website.
+                                </div>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="post photo not-page">
+                        <div class="post-wrapper clearfix">
+                            <header class="post-header">
+                                <h2 class="title">Moonlit Pond</h2>
+                            </header>
+                            <figure class="post-content high-res with-caption" data-photo-width="900">
+                                <div class="photo-wrapper">
+                                    <div class="photo-wrapper-inner">
+                                        <img class="u-photo" src="image 1.png" alt="Moonlit pond" loading="lazy" width="900" height="600">
+                                    </div>
+                                </div>
+                                <figcaption class="caption e-content">A peaceful glade in the heart of the forest.</figcaption>
+                            </figure>
+                        </div>
+                    </article>
+
+                    <article class="post quote not-page">
+                        <div class="post-wrapper clearfix">
+                            <div class="post-content e-content">
+                                <blockquote class="long">
+                                    "Sometimes the most productive thing you can do is relax."
+                                </blockquote>
+                                <div class="source"><cite>— VindemiaFae Sims 4 CC Finds</cite></div>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <aside class="sidebar">
+                    <div class="widget highlighted-posts">
+                        <div class="widget-title">Top Photos</div>
+                        <div class="posts">
+                            <div class="post post-micro post-type-photo" data-type="photo">
+                                <div class="post-content">
+                                    <div class="post-content-inner">
+                                        <div class="post-thumbnail-container" style="background-image: url('image 2.png');"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="post post-micro post-type-photo" data-type="photo">
+                                <div class="post-content">
+                                    <div class="post-content-inner">
+                                        <div class="post-thumbnail-container" style="background-image: url('image 1.png');"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="widget likes-widget">
+                        <div class="widget-title">About</div>
+                        <div class="post-content">
+                            <p>A calm, nature-inspired layout for a small site or portfolio. Use this page as a starting point for your content.</p>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+
+        <footer id="footer" class="content clearfix">
+            <p>© 2026 VindemiaFae Sims 4 CC Finds</p>
+        </footer>
+    </section>
+</body>
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    var audio = document.getElementById('background-audio');
+    var toggle = document.getElementById('music-toggle');
+    var icon = document.getElementById('music-icon');
+
+    audio.volume = 0.5;
+
+    function showPlay() {
+        icon.textContent = '▶';
+        toggle.setAttribute('aria-pressed', 'false');
+        toggle.setAttribute('aria-label', 'Play background music');
+    }
+
+    function showPause() {
+        icon.textContent = '⏸';
+        toggle.setAttribute('aria-pressed', 'true');
+        toggle.setAttribute('aria-label', 'Pause background music');
+    }
+
+    toggle.addEventListener('click', function () {
+        if (audio.paused || audio.ended) {
+            audio.loop = true;
+            if (audio.readyState === 0) audio.load();
+            audio.play().catch(function () {});
+            showPause();
+        } else {
+            audio.pause();
+            audio.currentTime = 0;
+            audio.loop = false;
+            showPlay();
+        }
+    });
+
+    audio.addEventListener('ended', function () {
+        // if loop was turned off elsewhere
+        showPlay();
+    });
+
+    audio.addEventListener('pause', function () {
+        if (!audio.loop && audio.currentTime === 0) showPlay();
+    });
+});
+</script>
+</html>

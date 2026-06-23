@@ -1,0 +1,397 @@
+/* VindemiaFae Sims 4 CC Finds standalone website stylesheet */
+:root {
+    --rw-night: #07110b;
+    --rw-pine: #102114;
+    --rw-deep-moss: #1f3222;
+    --rw-moss: #3f613e;
+    --rw-fern: #74a66a;
+    --rw-sage: #a9c4a0;
+    --rw-lily: #ece8d8;
+    --rw-moonwater: #8fbfb2;
+    --rw-bronze: #634d3d;
+    --rw-panel: rgba(14, 28, 17, .88);
+    --rw-panel-soft: rgba(28, 49, 32, .78);
+    --rw-border: rgba(169, 196, 160, .32);
+    --rw-glow: rgba(166, 255, 170, .28);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Fixed, accessible music controls (bottom-left) */
+.forest-music {
+    position: fixed;
+    left: 18px;
+    bottom: 18px;
+    z-index: 9999;
+    background: var(--rw-panel-soft, rgba(28,49,32,0.9));
+    color: var(--rw-lily, #ece8d8);
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.35);
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.music-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    color: inherit;
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 50%;
+    font-weight: 600;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.music-btn:focus {
+    outline: 2px solid var(--rw-glow, rgba(166,255,170,0.28));
+    outline-offset: 2px;
+}
+
+.music-icon {
+    font-size: 16px;
+    line-height: 1;
+    display: inline-block;
+    transform: none;
+}
+
+/* slightly larger on larger screens */
+@media (min-width: 640px) {
+    .music-icon { font-size: 18px; }
+}
+
+html, body {
+    margin: 0;
+    min-height: 100%;
+}
+
+body {
+    color: var(--rw-lily);
+    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    background:
+        radial-gradient(circle at 20% 10%, rgba(116,166,106,.18), transparent 28rem),
+        radial-gradient(circle at 80% 30%, rgba(143,191,178,.12), transparent 24rem),
+        linear-gradient(rgba(7,17,11,.55), rgba(7,17,11,.9)),
+        url('image 1.png');
+    background-color: var(--rw-night);
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center;
+    line-height: 1.6;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+        radial-gradient(circle at 12% 28%, rgba(190,255,160,.22) 0 2px, transparent 3px),
+        radial-gradient(circle at 78% 18%, rgba(143,191,178,.2) 0 2px, transparent 3px),
+        radial-gradient(circle at 64% 72%, rgba(236,232,216,.16) 0 2px, transparent 3px),
+        radial-gradient(circle at 36% 84%, rgba(180,255,120,.12) 0 2px, transparent 3px);
+    animation: rw-fireflies 9s ease-in-out infinite alternate;
+}
+
+@keyframes rw-fireflies {
+    from { opacity: .35; transform: translateY(0); }
+    to { opacity: .8; transform: translateY(-10px); }
+}
+
+body > * {
+    position: relative;
+    z-index: 1;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: var(--rw-fern);
+    text-decoration: none;
+}
+
+a:hover {
+    color: #baf2b1;
+}
+
+#page {
+    padding: 40px 24px 32px;
+}
+
+.header-wrapper,
+.nav-wrapper,
+.post,
+.post-wrapper,
+.post-content,
+.content,
+.sidebar,
+.widget,
+footer {
+    background: var(--rw-panel);
+    border: 1px solid var(--rw-border);
+    box-shadow: 0 18px 45px rgba(0,0,0,.28);
+    border-radius: 18px;
+    padding: 16px;
+}
+
+.header-wrapper {
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.top-blog-header {
+    display: grid;
+    gap: 0;
+}
+
+.header-image-wrapper {
+    min-height: 320px;
+    overflow: hidden;
+}
+
+.header-image.cover {
+    width: 100%;
+    min-height: 320px;
+    background-size: cover;
+    background-position: center;
+}
+
+.blog-title-wrapper {
+    padding: 36px 32px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 20px;
+}
+
+.user-avatar {
+    width: 120px;
+    height: 120px;
+    border-radius: 24px;
+    background-color: var(--rw-night);
+    background-size: cover;
+    background-position: center;
+    border: 1px solid var(--rw-border);
+    box-shadow: 0 0 0 4px rgba(7,17,11,.8);
+}
+
+.title-group {
+    flex: 1 1 260px;
+}
+
+.blog-title {
+    margin: 0 0 8px;
+    font-size: clamp(2.5rem, 4vw, 4rem);
+    letter-spacing: .18em;
+    text-transform: uppercase;
+}
+
+.description {
+    display: block;
+    color: var(--rw-sage);
+    max-width: 42rem;
+    font-size: 1rem;
+}
+
+.nav-wrapper {
+    margin-bottom: 32px;
+    padding: 16px 24px;
+}
+
+.nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.nav-menu .label {
+    display: inline-block;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(255,255,255,.08);
+    transition: background .3s ease;
+}
+
+.nav-menu .label:hover,
+.nav-menu .current-page {
+    background: rgba(116,166,106,.25);
+}
+
+#posts .container {
+    display: grid;
+    grid-template-columns: minmax(0, 2fr) 320px;
+    gap: 28px;
+}
+
+.main {
+    display: grid;
+    gap: 28px;
+}
+
+.post {
+    padding: 28px;
+}
+
+.post-header {
+    margin-bottom: 18px;
+}
+
+.post-title,
+.post-header .title {
+    margin: 0;
+    font-size: 1.75rem;
+}
+
+.post-content {
+    color: var(--rw-sage);
+    font-size: 1rem;
+}
+
+.post-content p,
+.post-content div,
+.post-content blockquote {
+    margin: 0 0 1.25rem;
+}
+
+blockquote {
+    margin: 0;
+    padding: 1.25rem 1.5rem;
+    border-left: 4px solid var(--rw-bronze);
+    background: rgba(169,196,160,.08);
+}
+
+.caption {
+    margin-top: 16px;
+    color: var(--rw-sage);
+}
+
+.photo-wrapper {
+    overflow: hidden;
+    border-radius: 20px;
+}
+
+.photo-wrapper-inner {
+    width: 100%;
+}
+
+.post-content.high-res img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 16px;
+}
+
+.sidebar {
+    padding: 24px;
+    display: grid;
+    gap: 24px;
+}
+
+.widget-title {
+    margin: 0 0 16px;
+    font-size: 1.1rem;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--rw-lily);
+}
+
+.post-micro {
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+.post-micro .post-thumbnail-container {
+    width: 100%;
+    min-height: 200px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 18px;
+}
+
+footer#footer {
+    margin-top: 32px;
+    padding: 24px;
+    text-align: center;
+    color: var(--rw-sage);
+}
+
+.forest-music {
+    position: fixed;
+    right: 18px;
+    bottom: 18px;
+    z-index: 10000;
+    background: rgba(9, 28, 14, .86);
+    border: 1px solid rgba(155, 207, 141, .45);
+    box-shadow: 0 0 20px rgba(105, 180, 100, .18);
+    padding: 10px;
+    border-radius: 999px;
+    overflow: hidden;
+    max-width: 42px;
+    height: 42px;
+    transition: all .35s ease;
+}
+
+.forest-music span {
+    color: #baf2b1;
+    font-size: 1.1rem;
+    display: block;
+    text-align: center;
+    line-height: 22px;
+}
+
+.forest-music audio {
+    display: none;
+    width: 100%;
+    margin-top: 8px;
+}
+
+.forest-music:hover {
+    max-width: 250px;
+    height: auto;
+    border-radius: 18px;
+}
+
+.forest-music:hover audio {
+    display: block;
+}
+
+@media (max-width: 980px) {
+    #posts .container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .blog-title-wrapper {
+        padding: 24px 20px;
+        gap: 16px;
+    }
+
+    .header-image-wrapper {
+        min-height: 220px;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+    }
+
+    .nav-menu .label {
+        width: fit-content;
+    }
+}
