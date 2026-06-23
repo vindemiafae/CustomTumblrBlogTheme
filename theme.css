@@ -87,17 +87,11 @@ html, body {
 
 body {
     color: var(--rw-lily);
-    font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
+    font-family: Georgia, "Times New Roman", serif;
     background:
-        radial-gradient(circle at 20% 10%, rgba(116,166,106,.18), transparent 28rem),
-        radial-gradient(circle at 80% 30%, rgba(143,191,178,.12), transparent 24rem),
-        linear-gradient(rgba(7,17,11,.55), rgba(7,17,11,.9)),
-        url('image 1.png');
+        linear-gradient(rgba(7,17,11,.42), rgba(7,17,11,.82)),
+        url('https://rawcdn.githack.com/vindemiafae/CustomTumblrBlogTheme/main/image%201.png') center top / cover fixed no-repeat;
     background-color: var(--rw-night);
-    background-attachment: fixed;
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
     line-height: 1.6;
 }
 
